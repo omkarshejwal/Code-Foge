@@ -1,13 +1,303 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code editor</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!---Fevicons--->
+    <link href="Images/Coder Forge icon.png" rel="icon" />
+    <link href="Images/Coder Forge icon.png" rel="CoderForge icon" />
+
+</head>
+
+<body>
+    <div id="site" class="site">
+        <header id="header-CF" class="hr-site">
+
+            <div class="header-top"> </div>
+            <div id="sticky" class="header-bottom">
+                <div class="hr-nav-wrap">
+                    <div class="hr-container">
+                        <nav id="site-navigation" class="hr-nav">
+                            <div class="site-logo">
+                                <a href="#" title="CoderForge"><img width="100%" height="36"
+                                        src="Images/Coder Forge.png"></a>
+                            </div>
+                            <div class="hr-nav-menu">
+                                <div class="hr-nav-menu-containt">
+                                    <div class="menu-nav-main-container">
+                                        <ul id="main-menu-nav" class="main-menu-nav">
+                                            <li>
+                                                <div class="menu-item"><a href="Main.html">Programs</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="menu-item"><a href="http://localhost:5173/">Practice</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="menu-item"><a href="Main.html">Challenge</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="menu-item"><a href="Contact.html">Contact</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="additional-div">
+                                        <div class="left-div">
+                                            <ul id="left-menu" class="left-menu">
+                                                <li>
+                                                    <a href="Contact.html">Contact us </a>
+                                                </li>
+                                                <li><a href="#">|</a></li>
+                                                <!-- login -->
+                                                <li> <a href="#" id="loginButton" onclick="openPopup()"
+                                                        class="bt"><span>Log In</span></a></li>
+
+
+                                            </ul>
+                                        </div>
+                                        <div class="right-div">
+                                            <button class="sign-in-btn" id="signupButton" onclick="openSignupPopup()"
+                                                class="bt">Sign In</button>
+                                            <span class="slider-icon left-icon"><i class='bx bxs-sun'></i></span>
+                                            <label class="switch">
+                                                <input type="checkbox" onclick="toggleDarkMode()">
+                                                <span class="slider"></span>
+                                            </label>
+                                            <span class="slider-icon right-icon"><i class='bx bxs-moon'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="primary" class="content-area">
+            <main id="main" class="site-home">
+                <div class="home22-intro">
+                    <div class="home-intro">
+                        <div class="home-container">
+                            <!-- Content within the home container -->
+                            <div class="home-content">
+                                <div class="content-intro">
+                                    <h1 class="home-intro-title">Practice to boost your Skills</h1>
+
+
+                                    <div class="home-intro-text">
+                                        <p>Skills speak louder than words, Check and Practice your skills here</p>
+                                       
+                                        <p>
+                                            <a href="#" id="signupButton" onclick="openSignupPopup()" class="bt">Sign
+                                                up</a>
+                                            <a href="#">Take Trial</a>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            </main>
+        </div>
+    </div>
+    <!-- Login Popup -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <form action="">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" name="username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Password" name="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn1"><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Login
+                </button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" onclick="openSignupPopup()">Sign Up here.</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign-Up Popup -->
+    <div id="signupPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeSignupPopup()">&times;</span>
+            <form action="">
+                <h2>Sign Up</h2>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" name="username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Password" name="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Phone Number" name="Phone No." required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                </div>
+                <!-- Add your sign-up form fields here -->
+                <button type="submit" class="btn1"><a href="#"><span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Sign Up
+                    </a>
+                </button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" onclick="openPopup()">Log In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer-gap"></div>
+    <!-------------------------- Footer starts here ------------------------------>
+    <footer id="footer" class="hr-site-footer">
+        <div class="footer-container">
+            <div class="footer-nav">
+                <div class="footer-menu-container"></div>
+                <ul id="footer-menu" class="menu">
+                    <li id="menu-item-1" class="footer-menu-item">
+                        <a href="#"> Programs
+                            <span class="menu-itmes_bullets"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li> <a href="#"> Python</a></li>
+                            <li><a href="#"> Java</a></li>
+                            <li><a href="#"> C</a></li>
+                            <li><a href="#"> C++</a></li>
+                            <li><a href="#"> Web-Devlopment</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="menu-item-2" class="footer-menu-item"><a href="#">Practice
+                            <span class="menu-itmes_bullets"></span>
+                        </a>
+                        <ul>
+                            <li> <a href="#"> Take a Test</a></li>
+                            <li><a href="#"> Assesment</a></li>
+                            <li><a href="#"> Lectures</a></li>
+                            <li><a href="#"> Notes</a></li>
+                            <li><a href="#"> Community</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-3" class="footer-menu-item"><a href="#">About
+                            <span class="menu-itmes_bullets"></span>
+                        </a>
+                        <ul>
+                            <li> <a href="#"> Our Team</a></li>
+                            <li><a href="#"> Careers</a></li>
+                            <li><a href="#"> Studies</a></li>
+
+                        </ul>
+                    </li>
+                    <li id="menu-item-4" class="footer-menu-item"><a href="#">Contact
+                            <span class="menu-itmes_bullets"></span>
+                        </a>
+                        <ul>
+                            <li> <a href="#"> Contact Us</a></li>
+                            <li><a href="#"> Trial</a></li>
+                            <li><a href="#"> Product Support</a></li>
+                            <li><a href="#"> Demo</a></li>
+                            <li><a href="#"> "Social Links"
+                                    <span class="menu-item_bullets"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li></li>
+                            <li></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for popup functionality -->
+    <script>
+        function toggleDarkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+
+        function openPopup() {
+            document.getElementById("loginPopup").style.display = "block";
+            document.getElementById("signupPopup").style.display = "none"; // Close sign-up form
+        }
+
+        function closePopup() {
+            document.getElementById("loginPopup").style.display = "none";
+        }
+
+        <!-- JavaScript for sign-up popup functionality -->
+
+        function openSignupPopup() {
+            closePopup(); // Close the login form
+            document.getElementById("signupPopup").style.display = "block";
+
+        }
+
+        function closeSignupPopup() {
+            document.getElementById("signupPopup").style.display = "none";
+        }
+    </script>
+
+    <script>
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+        // JavaScript code to toggle dark mode and change logo image
+        function toggleDarkMode() {
+            var body = document.body;
+            var logoImage = document.querySelector('.site-logo img');
+
+            body.classList.toggle('dark-mode'); // Toggle dark mode class on body
+
+            // Check if dark mode is activated
+            if (body.classList.contains('dark-mode')) {
+                // Change the logo image source to the dark mode logo image
+                logoImage.src = "Images/Coder Forge (1).png"; // Replace 'dark-mode-logo.png' with the path to your dark mode logo image
+
+            } else {
+                // Change the logo image source back to the original logo image
+                logoImage.src = "Images/Coder Forge.png"; // Replace 'original-logo.png' with the path to your original logo image
+
+            }
+        }
+
+    </script>
+</body>
+
 </html>
